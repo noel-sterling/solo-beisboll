@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <header>
+    <section class="portada">
+  <div class="contenido-portada">
+    <h1></h1>
+    <p></p>
+    <a href="beisboll.jpg.jpg" class="boton-portada"></a>
+  </div>
+</section>
+
+    <h1>Solo Béisbol</h1>
+    <nav>
+      <a href="index.html.html">Inicio</a>
+      <a href="">Partidos</a>
+     <a href="file:///C:/Users/Xcon/Pictures/SoloBeisbol/resultados.html">Resultados</a>
+    <a href="https://www.mlb.com/news" target="_blank" class="btn-mlb">
+  📰 Ver Noticias Oficiales de la MLB
+</a>
+    </nav>
+  </header>
+  </div>
+</section>
+  <meta charset="UTF-8">
+  <title>Solo Béisbol</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  .slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+  }
+
+  .nav-buttons button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .nav-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+</style>
+
+</head>
+<body>
+  <div class="slider">
+  <div class="slides" id="slideContainer">
+    <a href="Antonyroman.html" class="slide"><img src="imagen.jpg.png" alt="Noticia 1"></a>
+    <a href="noticia2.html" class="slide"><img src="imagendos.jpg.jpg" alt="Noticia 2"></a>
+    <a href="noticia3.html" class="slide"><img src="imagentres.jpg.jpg" alt="Noticia 3"></a>
+  </div>
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">❮</button>
+    <button onclick="nextSlide()">❯</button>
+  </div>
+</div>
+
+  <section class="partidos">
+    <h2>Próximos Partidos</h2>
+    <ul>
+      <li>Solo Béisbol vs Tigres – 10 de junio</li>
+      <li>Águilas vs Solo Béisbol – 15 de junio</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Solo Béisbol – Todos los derechos reservados.</p>
+  </footer>
+  <script>
+  let index = 0;
+  const slides = document.getElementById("slideContainer");
+  const totalSlides = slides.children.length;
+
+  function showSlide(i) {
+    index = (i + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(${-index * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(index + 1);
+  }
+
+  function prevSlide() {
+    showSlide(index - 1);
+  }
+
+  setInterval(nextSlide, 5000);
+</script>
+
+</body>
+</html>
